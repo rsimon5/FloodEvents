@@ -4,10 +4,12 @@
   
   <meta charset="UTF-8">
    <!-- Our CSS -->
-
    <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="bootswatch-4.1.3/dist/cerulean/bootstrap.css">   
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- Leaflet JS & CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -45,6 +47,13 @@
               <a class="nav-link" href="index.html">Overview <span class="sr-only">(current)</span></a>
             </li>
             <li>
+                <li class="nav-item text">
+                    <a class="nav-link" href="trends.html" role="button">
+                      Plots
+                    </a>
+                  </li>
+            </li>
+            <li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Maps
@@ -63,15 +72,7 @@
                       <a class="dropdown-item" href="FloodSummary.html">Historical Data</a>
                     </div>
                 </li>
-            </li>
-            <li>
-                <li class="nav-item text">
-                    <a class="nav-link" href="trends.html" role="button">
-                      Plots
-                    </a>
-                  </li>
-            </li>
-          
+            </li>          
           </ul>
           <span class="navbar-text">
               <a class="nav-link" href="about_us.html"> About Us </a>
@@ -80,7 +81,7 @@
     </nav>
 <!-- Add inforation about us -->
 <div class="container">
-        <div class="row" >
+  <div class="row" >
     <div class="col-md-6">
         <div class="card text-white bg-dark" style="margin: 30px;">
             <img class="card-img-top" src="" />
@@ -104,7 +105,7 @@
             <img class="card-img-top" src="" />
             <div class="card-body">
               <h5>Meron Desta</h5>
-              <p class="card-text">description</p>
+              <p class="card-text">Meron is an Operations Manager for an IT services company where she uses data-driven insights to make business decisions. She also supports a team of associates with their professional development. In her spare time, you can find Meron tending to her garden or working on volunteer programs to help the environment. </p>
             </div>
         </div>
     </div>
