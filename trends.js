@@ -62,7 +62,7 @@ var flood_count = {
   
    // Defining Layout
    var layout3 = {
-     title: "Flood Damages from 1999 to 2019",
+     title: "Flood Deaths/Injuries from 1999 to 2019",
      xaxis:{title:'Year'},
      yaxis:{title:'Count'},
      height: 500
