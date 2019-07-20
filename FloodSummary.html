@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+   <!-- Our CSS -->
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="bootswatch-4.1.3/dist/cerulean/bootstrap.css">   
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Leaflet JS & CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+    <!-- d3 JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Marker Cluster JS & CSS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+   
+    <title>Flooding in the US</title>
+  
+
+
+</head>
+
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Flooding & Flash Flooding in the US</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Overview <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Maps
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="incidences_map.html">Incidences</a>
+                      <a class="dropdown-item" href="prop_damage_map.html">Property Damage</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Data
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="FloodData2019.html">2019 Data</a>
+                      <a class="dropdown-item" href="FloodSummary.html">Historical Data</a>
+                    </div>
+                </li>
+            </li>
+            <li>
+                <li class="nav-item text">
+                    <a class="nav-link" href="trends.html" role="button">
+                      Plots
+                    </a>
+                  </li>
+            </li>
+          
+          </ul>
+          <span class="navbar-text">
+              <a class="nav-link" href="about_us.html"> About Us </a>
+          </span>
+        </div>
+    </nav>
+
+<div class=container>
+<table class="table table-hover">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Number of Floods</th>
+      <th>Property Damage</th>
+      <th>Crop Damage</th>
+      <th>Death Toll</th>
+      <th>Injury Toll</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1999</td>
+      <td>1408</td>
+      <td>1.235950e+09</td>
+      <td>3.279670e+08</td>
+      <td>68</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>1544</td>
+      <td>1.003065e+09</td>
+      <td>6.575590e+08</td>
+      <td>39</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2001</td>
+      <td>1754</td>
+      <td>1.127485e+09</td>
+      <td>3.804001e+07</td>
+      <td>52</td>
+      <td>277</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2002</td>
+      <td>1710</td>
+      <td>5.909171e+08</td>
+      <td>8.000101e+07</td>
+      <td>47</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2003</td>
+      <td>2355</td>
+      <td>2.168979e+09</td>
+      <td>1.580690e+08</td>
+      <td>88</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2004</td>
+      <td>2383</td>
+      <td>1.456590e+09</td>
+      <td>2.907791e+08</td>
+      <td>82</td>
+      <td>128</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2005</td>
+      <td>2060</td>
+      <td>1.174055e+09</td>
+      <td>4.793503e+07</td>
+      <td>43</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2006</td>
+      <td>1870</td>
+      <td>2.738879e+09</td>
+      <td>7.060382e+07</td>
+      <td>79</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2007</td>
+      <td>5467</td>
+      <td>1.529587e+05</td>
+      <td>3.502840e+04</td>
+      <td>94</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2008</td>
+      <td>6328</td>
+      <td>2.325886e+05</td>
+      <td>7.900215e+04</td>
+      <td>95</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2009</td>
+      <td>6069</td>
+      <td>1.616721e+05</td>
+      <td>1.379980e+04</td>
+      <td>67</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2010</td>
+      <td>6664</td>
+      <td>2.138665e+05</td>
+      <td>2.394425e+04</td>
+      <td>116</td>
+      <td>340</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2011</td>
+      <td>7152</td>
+      <td>2.032651e+05</td>
+      <td>2.982450e+04</td>
+      <td>128</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2012</td>
+      <td>3297</td>
+      <td>5.807338e+04</td>
+      <td>6.232000e+03</td>
+      <td>34</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2013</td>
+      <td>6660</td>
+      <td>1.575602e+05</td>
+      <td>6.921650e+03</td>
+      <td>84</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2014</td>
+      <td>5138</td>
+      <td>1.093017e+05</td>
+      <td>8.265300e+03</td>
+      <td>42</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2015</td>
+      <td>7650</td>
+      <td>2.331071e+05</td>
+      <td>2.858400e+04</td>
+      <td>202</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2016</td>
+      <td>5289</td>
+      <td>1.273630e+05</td>
+      <td>1.480377e+04</td>
+      <td>138</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2017</td>
+      <td>6134</td>
+      <td>1.672659e+05</td>
+      <td>2.728749e+04</td>
+      <td>149</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2018</td>
+      <td>9202</td>
+      <td>1.044486e+05</td>
+      <td>2.032212e+04</td>
+      <td>83</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2019</td>
+      <td>1859</td>
+      <td>2.678861e+04</td>
+      <td>9.640000e+02</td>
+      <td>12</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div>
